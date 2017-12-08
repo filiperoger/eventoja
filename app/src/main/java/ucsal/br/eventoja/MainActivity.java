@@ -89,8 +89,8 @@ public class MainActivity extends AppCompatActivity {
             values.put(EventoEntry.COLUNA_NOME_DATA, e.getData());
             values.put(EventoEntry.COLUNA_NOME_LOCAL, e.getLocal());
             values.put(EventoEntry.COLUNA_NOME_ENDERECO, e.getEndereco());
-//            values.put(EventoEntry.COLUNA_NOME_LATITUDE, e.getLatitude());
-//            values.put(EventoEntry.COLUNA_NOME_LONGITUDE, e.getLongitude());
+            values.put(EventoEntry.COLUNA_NOME_LATITUDE, e.getLatitude());
+            values.put(EventoEntry.COLUNA_NOME_LONGITUDE, e.getLongitude());
             values.put(EventoEntry.COLUNA_NOME_PRECO, e.getPreco());
             values.put(EventoEntry.COLUNA_NOME_DETALHES, e.getDetalhes());
             values.put(EventoEntry.COLUNA_NOME_IMAGEM, e.getImagem());

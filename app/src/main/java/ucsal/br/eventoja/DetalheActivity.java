@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -13,6 +14,8 @@ import com.squareup.picasso.Picasso;
 import ucsal.br.eventoja.EventoContract.EventoEntry;
 
 public class DetalheActivity extends AppCompatActivity {
+
+    private FragmentManager fragmentManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +46,8 @@ public class DetalheActivity extends AppCompatActivity {
             ((TextView) DetalheActivity.this.findViewById(R.id.preco)).setText(eventoPreco);
             ((TextView) DetalheActivity.this.findViewById(R.id.detalhes)).setText(eventoDetalhes);
             Picasso.with(DetalheActivity.this).load(eventoImagem).into((ImageView) DetalheActivity.this.findViewById(R.id.imagem));
+
+            fragmentManager = getSupportFragmentManager();
         }
     }
 }
