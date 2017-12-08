@@ -32,12 +32,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Context context = this;
-        String text = "Olá Filipe!";
-        int duration = Toast.LENGTH_SHORT;
-        Toast toast = Toast.makeText(context, text, duration);
-        toast.show();
-
         TextView titulo = (TextView) this.findViewById(R.id.titulo);
         titulo.setText(R.string.eventos_titulo);
 
@@ -48,6 +42,12 @@ public class MainActivity extends AppCompatActivity {
         ListView lista_eventos = (ListView) this.findViewById(R.id.lista_eventos);
         lista_eventos.setAdapter(adapter);
 
+        Context context = this;
+        String text = "Olá Filipe!";
+        int duration = Toast.LENGTH_SHORT;
+        Toast toast = Toast.makeText(context, text, duration);
+        toast.show();
+
         lista_eventos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         AsyncHttpClient client = new AsyncHttpClient();
-        client.get("https://raw.githubusercontent.com/filiperoger/imagensProjeto/master/eventos.txt",
+        client.get("https://raw.githubusercontent.com/filiperoger/eventoja/master/eventos.txt",
                 new TextHttpResponseHandler() {
                     @Override
                     public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
@@ -89,8 +89,8 @@ public class MainActivity extends AppCompatActivity {
             values.put(EventoEntry.COLUNA_NOME_DATA, e.getData());
             values.put(EventoEntry.COLUNA_NOME_LOCAL, e.getLocal());
             values.put(EventoEntry.COLUNA_NOME_ENDERECO, e.getEndereco());
-            values.put(EventoEntry.COLUNA_NOME_LATITUDE, e.getLatitude());
-            values.put(EventoEntry.COLUNA_NOME_LONGITUDE, e.getLongitude());
+//            values.put(EventoEntry.COLUNA_NOME_LATITUDE, e.getLatitude());
+//            values.put(EventoEntry.COLUNA_NOME_LONGITUDE, e.getLongitude());
             values.put(EventoEntry.COLUNA_NOME_PRECO, e.getPreco());
             values.put(EventoEntry.COLUNA_NOME_DETALHES, e.getDetalhes());
             values.put(EventoEntry.COLUNA_NOME_IMAGEM, e.getImagem());

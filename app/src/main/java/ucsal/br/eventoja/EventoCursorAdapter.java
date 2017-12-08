@@ -16,15 +16,13 @@ public class EventoCursorAdapter extends CursorAdapter {
 
     @Override
     public View newView(Context context, Cursor cursor, ViewGroup viewGroup) {
-        return LayoutInflater.from(context).inflate(
-                R.layout.list_item_eventos, viewGroup, false);
+        return LayoutInflater.from(context).inflate(R.layout.list_item_eventos, viewGroup, false);
     }
 
     @Override
     public void bindView(View view, Context context, Cursor cursor) {
-        TextView textView = (TextView) view.findViewById(R.id.nome);
-        String eventoNome = cursor.getString(
-                cursor.getColumnIndexOrThrow("nome"));
+        TextView textView = (TextView) view.findViewById(R.id.eventos);
+        String eventoNome = cursor.getString(cursor.getColumnIndexOrThrow("nome"));
         textView.setText(eventoNome);
     }
 }

@@ -12,8 +12,8 @@ public class Evento implements Serializable {
     private String hora;
     private String local;
     private String endereco;
-    private Double latitude;
-    private Double longitude;
+//    private Double latitude;
+//    private Double longitude;
     private String preco;
     private String detalhes;
     private String imagem;
@@ -21,15 +21,15 @@ public class Evento implements Serializable {
     public Evento() {
     }
 
-    public Evento(Integer _id, String nome, String data, String hora, String local, String endereco, Double latitude, Double longitude, String preco, String detalhes, String imagem) {
+    public Evento(Integer _id, String nome, String data, String hora, String local, String endereco, /*Double latitude, Double longitude,*/ String preco, String detalhes, String imagem) {
         this._id = _id;
         this.nome = nome;
         this.data = data;
         this.hora = hora;
         this.local = local;
         this.endereco = endereco;
-        this.latitude = latitude;
-        this.longitude = longitude;
+//        this.latitude = latitude;
+//        this.longitude = longitude;
         this.preco = preco;
         this.detalhes = detalhes;
         this.imagem = imagem;
@@ -83,21 +83,21 @@ public class Evento implements Serializable {
         this.endereco = endereco;
     }
 
-    public Double getLatitude() {
-        return latitude;
-    }
-
-    public void setLatitude(Double latitude) {
-        this.latitude = latitude;
-    }
-
-    public Double getLongitude() {
-        return longitude;
-    }
-
-    public void setLongitude(Double longitude) {
-        this.longitude = longitude;
-    }
+//    public Double getLatitude() {
+//        return latitude;
+//    }
+//
+//    public void setLatitude(Double latitude) {
+//        this.latitude = latitude;
+//    }
+//
+//    public Double getLongitude() {
+//        return longitude;
+//    }
+//
+//    public void setLongitude(Double longitude) {
+//        this.longitude = longitude;
+//    }
 
     public String getPreco() {
         return preco;
@@ -132,8 +132,8 @@ public class Evento implements Serializable {
                 ", hora='" + hora + '\'' +
                 ", local='" + local + '\'' +
                 ", endereco='" + endereco + '\'' +
-                ", latitude=" + latitude +
-                ", longitude=" + longitude +
+//                ", latitude=" + latitude +
+//                ", longitude=" + longitude +
                 ", preco='" + preco + '\'' +
                 ", detalhes='" + detalhes + '\'' +
                 ", imagem='" + imagem + '\'' +

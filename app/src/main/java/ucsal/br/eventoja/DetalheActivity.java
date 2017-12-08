@@ -29,11 +29,17 @@ public class DetalheActivity extends AppCompatActivity {
             cursor.moveToPosition(posicao);
 
             String eventoNome = cursor.getString(cursor.getColumnIndexOrThrow(EventoEntry.COLUNA_NOME_NOME));
+            String eventoData = cursor.getString(cursor.getColumnIndexOrThrow(EventoEntry.COLUNA_NOME_DATA));
+            String eventoLocal = cursor.getString(cursor.getColumnIndexOrThrow(EventoEntry.COLUNA_NOME_LOCAL));
+            String eventoEndereco = cursor.getString(cursor.getColumnIndexOrThrow(EventoEntry.COLUNA_NOME_ENDERECO));
             String eventoPreco = cursor.getString(cursor.getColumnIndexOrThrow(EventoEntry.COLUNA_NOME_PRECO));
             String eventoDetalhes = cursor.getString(cursor.getColumnIndexOrThrow(EventoEntry.COLUNA_NOME_DETALHES));
             String eventoImagem = cursor.getString(cursor.getColumnIndexOrThrow(EventoEntry.COLUNA_NOME_IMAGEM));
 
             ((TextView) DetalheActivity.this.findViewById(R.id.nome)).setText(eventoNome);
+            ((TextView) DetalheActivity.this.findViewById(R.id.data)).setText(eventoData);
+            ((TextView) DetalheActivity.this.findViewById(R.id.local)).setText(eventoLocal);
+            ((TextView) DetalheActivity.this.findViewById(R.id.endereco)).setText(eventoEndereco);
             ((TextView) DetalheActivity.this.findViewById(R.id.preco)).setText(eventoPreco);
             ((TextView) DetalheActivity.this.findViewById(R.id.detalhes)).setText(eventoDetalhes);
             Picasso.with(DetalheActivity.this).load(eventoImagem).into((ImageView) DetalheActivity.this.findViewById(R.id.imagem));
