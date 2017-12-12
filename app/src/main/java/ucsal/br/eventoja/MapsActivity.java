@@ -1,6 +1,6 @@
 package ucsal.br.eventoja;
 
-import android.support.v4.app.FragmentActivity;
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -12,7 +12,16 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 public class MapsActivity extends SupportMapFragment implements OnMapReadyCallback {
 
-    private GoogleMap mMap;
+    private GoogleMap mMap = null;
+    String[] arrayArgumentos = null;
+
+    public MapsActivity() {
+    }
+
+    @SuppressLint("ValidFragment")
+    public MapsActivity(String[] arrayArgumentos) {
+        this.arrayArgumentos = arrayArgumentos;
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -23,8 +32,8 @@ public class MapsActivity extends SupportMapFragment implements OnMapReadyCallba
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        LatLng local = new LatLng(Double.parseDouble(arrayArgumentos[0]), Double.parseDouble(arrayArgumentos[1]));
+        mMap.addMarker(new MarkerOptions().position(local).title(arrayArgumentos[2]));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(local));
     }
 }

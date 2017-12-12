@@ -6,14 +6,14 @@ public class Evento implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private Integer _id;
+    private Integer id;
     private String nome;
     private String data;
     private String hora;
     private String local;
     private String endereco;
-    private Double latitude;
-    private Double longitude;
+    private String latitude;
+    private String longitude;
     private String preco;
     private String detalhes;
     private String imagem;
@@ -21,8 +21,8 @@ public class Evento implements Serializable {
     public Evento() {
     }
 
-    public Evento(Integer _id, String nome, String data, String hora, String local, String endereco, Double latitude, Double longitude, String preco, String detalhes, String imagem) {
-        this._id = _id;
+    public Evento(Integer id, String nome, String data, String hora, String local, String endereco, String latitude, String longitude, String preco, String detalhes, String imagem) {
+        this.id = id;
         this.nome = nome;
         this.data = data;
         this.hora = hora;
@@ -35,12 +35,12 @@ public class Evento implements Serializable {
         this.imagem = imagem;
     }
 
-    public Integer get_id() {
-        return _id;
+    public Integer getId() {
+        return id;
     }
 
-    public void set_id(Integer _id) {
-        this._id = _id;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getNome() {
@@ -83,19 +83,19 @@ public class Evento implements Serializable {
         this.endereco = endereco;
     }
 
-    public Double getLatitude() {
+    public String getLatitude() {
         return latitude;
     }
 
-    public void setLatitude(Double latitude) {
+    public void setLatitude(String latitude) {
         this.latitude = latitude;
     }
 
-    public Double getLongitude() {
+    public String getLongitude() {
         return longitude;
     }
 
-    public void setLongitude(Double longitude) {
+    public void setLongitude(String longitude) {
         this.longitude = longitude;
     }
 
@@ -126,14 +126,14 @@ public class Evento implements Serializable {
     @Override
     public String toString() {
         return "Evento{" +
-                "_id=" + _id +
+                "id=" + id +
                 ", nome='" + nome + '\'' +
                 ", data='" + data + '\'' +
                 ", hora='" + hora + '\'' +
                 ", local='" + local + '\'' +
                 ", endereco='" + endereco + '\'' +
-                ", latitude=" + latitude +
-                ", longitude=" + longitude +
+                ", latitude='" + latitude + '\'' +
+                ", longitude='" + longitude + '\'' +
                 ", preco='" + preco + '\'' +
                 ", detalhes='" + detalhes + '\'' +
                 ", imagem='" + imagem + '\'' +

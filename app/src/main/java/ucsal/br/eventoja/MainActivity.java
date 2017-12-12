@@ -87,6 +87,7 @@ public class MainActivity extends AppCompatActivity {
             ContentValues values = new ContentValues();
             values.put(EventoEntry.COLUNA_NOME_NOME, e.getNome());
             values.put(EventoEntry.COLUNA_NOME_DATA, e.getData());
+            values.put(EventoEntry.COLUNA_NOME_HORA, e.getHora());
             values.put(EventoEntry.COLUNA_NOME_LOCAL, e.getLocal());
             values.put(EventoEntry.COLUNA_NOME_ENDERECO, e.getEndereco());
             values.put(EventoEntry.COLUNA_NOME_LATITUDE, e.getLatitude());
@@ -94,6 +95,7 @@ public class MainActivity extends AppCompatActivity {
             values.put(EventoEntry.COLUNA_NOME_PRECO, e.getPreco());
             values.put(EventoEntry.COLUNA_NOME_DETALHES, e.getDetalhes());
             values.put(EventoEntry.COLUNA_NOME_IMAGEM, e.getImagem());
+
             db.insert(EventoEntry.TABELA_NOME, null, values);
         }
     }

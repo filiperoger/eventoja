@@ -33,21 +33,31 @@ public class DetalheActivity extends AppCompatActivity {
 
             String eventoNome = cursor.getString(cursor.getColumnIndexOrThrow(EventoEntry.COLUNA_NOME_NOME));
             String eventoData = cursor.getString(cursor.getColumnIndexOrThrow(EventoEntry.COLUNA_NOME_DATA));
+            String eventoHora = cursor.getString(cursor.getColumnIndexOrThrow(EventoEntry.COLUNA_NOME_HORA));
             String eventoLocal = cursor.getString(cursor.getColumnIndexOrThrow(EventoEntry.COLUNA_NOME_LOCAL));
             String eventoEndereco = cursor.getString(cursor.getColumnIndexOrThrow(EventoEntry.COLUNA_NOME_ENDERECO));
+            String eventoLatitude = cursor.getString(cursor.getColumnIndexOrThrow(EventoEntry.COLUNA_NOME_LATITUDE));
+            String eventoLongitude = cursor.getString(cursor.getColumnIndexOrThrow(EventoEntry.COLUNA_NOME_LONGITUDE));
             String eventoPreco = cursor.getString(cursor.getColumnIndexOrThrow(EventoEntry.COLUNA_NOME_PRECO));
             String eventoDetalhes = cursor.getString(cursor.getColumnIndexOrThrow(EventoEntry.COLUNA_NOME_DETALHES));
             String eventoImagem = cursor.getString(cursor.getColumnIndexOrThrow(EventoEntry.COLUNA_NOME_IMAGEM));
 
             ((TextView) DetalheActivity.this.findViewById(R.id.nome)).setText(eventoNome);
             ((TextView) DetalheActivity.this.findViewById(R.id.data)).setText(eventoData);
+            ((TextView) DetalheActivity.this.findViewById(R.id.hora)).setText(eventoHora);
             ((TextView) DetalheActivity.this.findViewById(R.id.local)).setText(eventoLocal);
             ((TextView) DetalheActivity.this.findViewById(R.id.endereco)).setText(eventoEndereco);
             ((TextView) DetalheActivity.this.findViewById(R.id.preco)).setText(eventoPreco);
             ((TextView) DetalheActivity.this.findViewById(R.id.detalhes)).setText(eventoDetalhes);
             Picasso.with(DetalheActivity.this).load(eventoImagem).into((ImageView) DetalheActivity.this.findViewById(R.id.imagem));
 
+            String[] arrayArgumentos = new String[3];
+            arrayArgumentos[0] = eventoLatitude;
+            arrayArgumentos[1] = eventoLongitude;
+            arrayArgumentos[2] = eventoNome;
+
             fragmentManager = getSupportFragmentManager();
+            fragmentManager.beginTransaction().add(R.id.maps, new MapsActivity(arrayArgumentos)).commit();
         }
     }
 }

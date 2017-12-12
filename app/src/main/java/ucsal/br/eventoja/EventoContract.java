@@ -4,7 +4,7 @@ import android.provider.BaseColumns;
 
 public class EventoContract {
 
-    public static final String DB_NOME = "evento.db";
+    public static final String DB_NOME = "MyEventos.db";
     public static final int DB_VERSAO = 1;
     public static final String SQL_CREATE_TABLE = "CREATE TABLE " +
             EventoEntry.TABELA_NOME + " (" +
@@ -14,8 +14,8 @@ public class EventoContract {
             EventoEntry.COLUNA_NOME_HORA + " TEXT," +
             EventoEntry.COLUNA_NOME_LOCAL + " TEXT," +
             EventoEntry.COLUNA_NOME_ENDERECO + " TEXT," +
-            EventoEntry.COLUNA_NOME_LATITUDE + " REAL," +
-            EventoEntry.COLUNA_NOME_LONGITUDE + " REAL," +
+            EventoEntry.COLUNA_NOME_LATITUDE + " TEXT," +
+            EventoEntry.COLUNA_NOME_LONGITUDE + " TEXT," +
             EventoEntry.COLUNA_NOME_PRECO + " TEXT," +
             EventoEntry.COLUNA_NOME_DETALHES + " TEXT," +
             EventoEntry.COLUNA_NOME_IMAGEM + " TEXT)";
