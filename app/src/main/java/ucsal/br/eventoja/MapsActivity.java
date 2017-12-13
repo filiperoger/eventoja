@@ -1,6 +1,7 @@
 package ucsal.br.eventoja;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -34,6 +35,17 @@ public class MapsActivity extends SupportMapFragment implements OnMapReadyCallba
         mMap = googleMap;
         LatLng local = new LatLng(Double.parseDouble(arrayArgumentos[0]), Double.parseDouble(arrayArgumentos[1]));
         mMap.addMarker(new MarkerOptions().position(local).title(arrayArgumentos[2]));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(local));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(local, 16.0f));
+
+        mMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
+            @Override
+            public void onMapClick(LatLng latLng) {
+                Intent intent = new Intent(getActivity(), FragmentMaps.class);
+                intent.putExtra("lat", arrayArgumentos[0]);
+                intent.putExtra("lng", arrayArgumentos[1]);
+                intent.putExtra("nomeEvento", arrayArgumentos[2]);
+                startActivity(intent);
+            }
+        });
     }
 }

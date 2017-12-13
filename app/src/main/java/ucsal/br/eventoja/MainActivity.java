@@ -16,7 +16,8 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.loopj.android.http.*;
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.TextHttpResponseHandler;
 
 import cz.msebera.android.httpclient.Header;
 import ucsal.br.eventoja.EventoContract.EventoEntry;
@@ -36,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         titulo.setText(R.string.eventos_titulo);
 
         SQLiteDatabase db = eventoDbHelper.getWritableDatabase();
-        Cursor cursor = db.rawQuery("SELECT * FROM evento", null);
+        final Cursor cursor = db.rawQuery("SELECT * FROM evento", null);
         adapter = new EventoCursorAdapter(this, cursor);
 
         ListView lista_eventos = (ListView) this.findViewById(R.id.lista_eventos);

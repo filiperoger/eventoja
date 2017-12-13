@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">Evento Já</string>
     <string name="eventos_titulo">Eventos</string>
-    <string name="title_activity_maps">Mapa</string>
+    <string name="title_activity_fragment_maps">Mapa</string>
 </resources>

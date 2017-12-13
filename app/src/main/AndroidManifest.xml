@@ -15,7 +15,6 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -26,8 +25,9 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".MapsActivity"
-            android:label="@string/title_activity_maps" />
+            android:name=".FragmentMaps"
+            android:label="@string/title_activity_fragment_maps">
+        </activity>
     </application>
 
 </manifest>
