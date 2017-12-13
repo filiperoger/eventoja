@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
 
                         Gson gson = new GsonBuilder().create();
                         eventos = gson.fromJson(responseString, Evento[].class);
-
+                        deleteEventosDB();
                         inserirEventoDB(eventos);
 
                         SQLiteDatabase db = eventoDbHelper.getWritableDatabase();
@@ -99,5 +99,10 @@ public class MainActivity extends AppCompatActivity {
 
             db.insert(EventoEntry.TABELA_NOME, null, values);
         }
+    }
+
+    private void deleteEventosDB(){
+        SQLiteDatabase db = eventoDbHelper.getWritableDatabase();
+        db.delete(EventoEntry.TABELA_NOME, null, null);
     }
 }
